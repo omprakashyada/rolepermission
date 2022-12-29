@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +32,9 @@ Route::group(['middleware' =>'auth'],function(){
 
 Route::group(['middleware' =>'role:editor'],function(){
     Route::get('role',function(){
-        dd('hi');
+
     });
 });
 
+Route::get('/post','HomeController@postPage');
+Route::post('post','HomeController@postData');
